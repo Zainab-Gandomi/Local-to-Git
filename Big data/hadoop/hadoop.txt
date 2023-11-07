@@ -1,0 +1,171 @@
+
+1.
+touchz
+
+to create new file in HDFS with file size 0 byte.
+
+hadoop fs -touchz /directory/file name
+hdfs dfs -touchz /directory/file name
+
+2.
+test
+
+test the file operation
+its gives 1 if path exist 
+its gives 0 if it has zero length or path provided by user is a directory.
+
+hdfs dfs -test -r sample
+hdfs dfs -test -w sample
+
+3.
+ls
+
+shows all directory 
+if you did not the directory mabye ls check the local not hdfs home directory
+
+hdfs dfs -ls /directory
+
+4. 
+stat
+
+givin you a metadata of the file ( different  format like %b, % g ,....)
+
+hdfs dfs -stat %n /directory/file name
+
+5. 
+chmod
+
+can change the file permission
+
+hadoop fs -chmod 
+
+
+6.
+appenToFile
+
+append the file from the one to onther on the HDFS
+
+hdfs dfs -appenToFile 
+
+7. 
+checksum
+
+to check the file when move is that two is the same or somthing lost
+
+hadoop fs -checksum /directory/file name
+
+8.
+find
+
+find the file on the HDFS 
+following example is for finding copytest file in HDFS
+
+hadoop fs -find / -name copytest -print
+
+9.
+mkdir
+
+to make directory 
+
+hadoop fs -mkdir /path/directoryname
+
+10.
+put
+
+when to wants to copy file from local machine or other system to hadoop
+
+hadoop fs -put /source  /destination
+
+11.
+cp 
+
+when wants to copy file from one cluster to other cluster in hadoop
+
+hadoop fs -cp /source  /destination
+
+diference between cp and put?
+becuase the file in local system is not distrebuted and very expensive to use cp when can use put
+
+12.
+copyFromLocal
+
+can copy file just from local machine
+
+hadoop fs -copyFromLocal /source directory  /hdfs destination
+
+differece between put and copyFromLocal?
+put can copy file from any source but copyFromLocal can copy file just from local machine
+
+13.
+get 
+
+get data from hdfs and copy to any destination
+
+hadoop fs -get /source /local destination
+
+14.
+copyToLocal
+
+copy from hdfs to local
+
+hadoop fs -copyToLocal /source /local destination
+
+15.
+cat 
+
+cat command reads the file in HDFS and displays the content of the file on console or stdout
+
+hadoop fs -cat /path to file in hdfs
+
+16.
+mv 
+
+move the file from on directory to another
+
+hadoop fs -mv /source  /destination
+
+17.
+head
+
+give the data from the beggining of the file
+
+hdfs dfs -head -10 / file name
+
+18.
+tail
+
+give the data from the end of the file
+
+hdfs dfs -tail -10 / file name
+
+19.
+rm
+
+remove file
+
+hdfs dfs -rm /path
+
+20.
+expunge
+
+empty the trash folder
+
+hadoop fs -expunge
+
+diference rm and expunge?
+rm just delete the file and put it in trash folder but expunge totaly delete every thing in trash folder
+
+21.
+chown
+
+changing the owner of a file name
+
+hadoop fs -chown -R owner group /path
+
+
+
+
+
+
+
+
